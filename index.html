@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PizzaFlow | Login</title>
+    <meta
+      name="description"
+      content="Modern pizza ordering login page with a Firebase-inspired UX design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="auth-shell" aria-label="Authentication panel">
+      <section class="brand-panel" aria-label="Pizza brand information">
+        <div class="brand-header">
+          <div class="brand-mark">P</div>
+          <span>SAFIYYA</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh • Fast • Reliable</p>
+          <h1>Track every order, reward every craving.</h1>
+          <p class="lead">
+            Sign in to reorder your favorites, manage saved addresses, and unlock
+            delicious loyalty offers.
+          </p>
+        </div>
+
+        <div class="stats-grid" aria-label="Key app statistics">
+          <article class="stat-card">
+            <strong>24 min</strong>
+            <span>avg delivery</span>
+          </article>
+          <article class="stat-card">
+            <strong>4.9/5</strong>
+            <span>customer rating</span>
+          </article>
+          <article class="stat-card">
+            <strong>14k+</strong>
+            <span>happy pizzas</span>
+          </article>
+        </div>
+
+        <div class="live-order" aria-label="Live order status card">
+          <div class="live-order__header">
+            <span class="status-dot"></span>
+            <span>Live order status</span>
+          </div>
+          <div class="live-order__item">
+            <div>
+              <p class="item-name">Margherita Classic</p>
+              <p class="item-meta">Delivery in 12 mins</p>
+            </div>
+            <strong>$18.00</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel" aria-label="Login form">
+        <div class="auth-toggle" role="tablist" aria-label="Authentication mode switcher">
+          <button class="mode-button is-active" type="button" data-mode="login" role="tab" aria-selected="true">
+            Sign in
+          </button>
+          <button class="mode-button" type="button" data-mode="signup" role="tab" aria-selected="false">
+            Create account
+          </button>
+        </div>
+
+        <header class="form-header">
+          <p class="eyebrow accent">Authentication</p>
+          <h2 id="formTitle">Welcome back</h2>
+          <p id="formSubtitle">Access your pizza profile and order history.</p>
+        </header>
+
+        <form id="authForm" novalidate>
+          <div class="field hidden" id="nameField">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+              <button class="toggle-password" type="button" aria-label="Show password">Show</button>
+            </div>
+          </div>
+
+          <div class="field hidden" id="confirmField">
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter your password" />
+          </div>
+
+          <div class="utility-row">
+            <label class="remember-me">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="text-link">Forgot password?</a>
+          </div>
+
+          <button class="primary-button" id="submitButton" type="submit">
+            Sign in
+          </button>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <div class="social-row" aria-label="Social login buttons">
+            <button class="social-button" type="button" aria-label="Continue with Google">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20c10.493 0 19.438-7.616 19.438-20 0-1.341-.138-2.65-.389-3.917z"/>
+                <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.223 0-9.654-3.343-11.303-8H6.126v5.217C9.46 39.212 16.217 44 24 44z"/>
+                <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.16-4.087 5.529l6.19 5.238C40.911 36.723 44 31.17 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+
+            <button class="social-button" type="button" aria-label="Continue with GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.4 7.866 10.92.576.106.786-.25.786-.555 0-.273-.01-1.18-.015-2.14-3.198.696-3.87-1.54-3.87-1.54-.523-1.327-1.277-1.68-1.277-1.68-1.045-.715.079-.7.079-.7 1.156.081 1.764 1.187 1.764 1.187 1.025 1.758 2.689 1.25 3.344.955.104-.742.401-1.25.728-1.536-2.553-.291-5.24-1.277-5.24-5.682 0-1.255.448-2.282 1.182-3.085-.119-.29-.512-1.464.112-3.05 0 0 .966-.31 3.163 1.178A10.95 10.95 0 0 1 12 6.672c.98-.005 1.968.132 2.886.388 2.196-1.488 3.16-1.178 3.16-1.178.626 1.586.232 2.76.113 3.05.736.803 1.181 1.83 1.181 3.085 0 4.416-2.69 5.387-5.253 5.674.413.356.782 1.056.782 2.126 0 1.536-.014 2.775-.014 3.155 0 .308.208.664.792.552A11.507 11.507 0 0 0 23.5 12C23.5 5.648 18.352.5 12 .5z"/>
+              </svg>
+              <span>GitHub</span>
+            </button>
+          </div>
+        </form>
+
+        <p class="form-footer">
+          <span id="footerPrompt">New to PizzaFlow?</span>
+          <a href="#" id="footerLink">Create account</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
